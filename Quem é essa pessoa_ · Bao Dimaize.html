@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quem é essa pessoa? · Bao Dimaize</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fff3dc;--card:#ffffff;--ink:#2b1b12;--mut:#7a6455;--pri:#e8452c;--pri-ink:#ffffff;--acc:#ffb703;--alt:#fde4c3;--line:#f0d9b5;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1410;--card:#2a1d17;--ink:#fff1e0;--mut:#c0a692;--pri:#ff6a4d;--pri-ink:#1d1410;--alt:#3a2a21;--line:#4a372b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1410;--card:#2a1d17;--ink:#fff1e0;--mut:#c0a692;--pri:#ff6a4d;--pri-ink:#1d1410;--alt:#3a2a21;--line:#4a372b;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+main{max-width:560px;margin:0 auto;padding:16px}
+@media (min-width:900px){:root{--z:1.5}main{zoom:var(--z)}}
+@media (min-width:1280px){:root{--z:2}}
+@media (min-width:1700px){:root{--z:2.6}}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+h1{font-size:1.25rem;margin:0}
+h1 small{display:block;font-size:.8rem;color:var(--mut);font-weight:500}
+h2{margin:.3em 0}
+.card{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:16px}
+.mut{color:var(--mut)}
+.center{text-align:center}
+.tag{display:inline-block;background:var(--acc);color:#2b1b12;font-weight:700;border-radius:99px;padding:3px 12px;font-size:.85rem}
+.btn{font:inherit;font-weight:700;border:0;border-radius:14px;padding:12px 16px;background:var(--pri);color:var(--pri-ink);cursor:pointer}
+.btn.alt{background:var(--alt);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line);padding:8px 12px}
+.btn.big{width:100%;padding:16px;font-size:1.05rem;margin-top:14px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+input[type=text]{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px;min-width:0}
+.item{display:flex;gap:8px;align-items:center;margin-top:10px}
+.item img{width:56px;height:56px;object-fit:cover;border-radius:10px;flex:none}
+.mini{border:0;background:var(--alt);color:var(--ink);border-radius:8px;width:34px;height:34px;font-size:1rem;cursor:pointer;flex:none}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.chip{font:inherit;font-weight:600;border:2px solid transparent;border-radius:99px;padding:6px 12px;background:var(--alt);color:var(--ink);cursor:pointer}
+.chip.on{border-color:var(--pri);background:var(--acc);color:#2b1b12}
+.lbl{font-weight:700;margin:16px 0 4px}
+.pic{position:relative;display:block;width:fit-content;max-width:100%;margin:12px auto;border-radius:16px;overflow:hidden;line-height:0;background:#000}
+.pic img,.pic canvas{display:block;max-width:100%;max-height:calc(60vh / var(--z,1));width:auto;height:auto;transition:filter .8s,transform .8s}
+.grid{position:absolute;inset:0;display:grid}
+.tile{border:1px solid rgba(255,255,255,.16);background:linear-gradient(135deg,#3b1d6e,#e8452c);opacity:1;transition:opacity .7s;padding:0;margin:0;cursor:pointer;border-radius:0}
+.tile.off{opacity:0;pointer-events:none}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row .btn{flex:1}
+.cap{font-size:1.7rem;line-height:1.25;color:var(--pri);animation:fi 1.2s both}
+@keyframes fi{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.conf{position:fixed;top:-40px;font-size:1.8rem;z-index:30;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(115vh) rotate(540deg)}}
+input[type=file]{display:none}
+.msg{font-size:1.5rem;line-height:1.35;margin:14px 0;padding:18px;background:var(--alt);border-left:6px solid var(--pri);border-radius:14px;text-align:left;animation:fi .8s both}
+.from{font-weight:700;color:var(--pri);font-size:1.1rem;margin:0 0 8px}
+.big-heart{font-size:3.5rem}
+.clues{display:flex;flex-direction:column;gap:8px;margin:8px 0}
+.clue{background:var(--alt);border-radius:14px;padding:10px 14px;font-weight:600;text-align:left}
+.clue.new{animation:fi .8s both}
+.btn.big1{flex:1 1 100%}
+.pk{position:relative;display:block;width:fit-content;max-width:100%;margin:8px auto;line-height:0;border-radius:12px;overflow:hidden;cursor:crosshair}
+.pk img{display:block;max-width:100%;max-height:300px}
+.dot{position:absolute;width:28px;height:28px;margin:-14px 0 0 -14px;border:3px solid #fff;border-radius:50%;background:rgba(232,69,44,.6);pointer-events:none}
+.dot[hidden]{display:none}
+</style>
+</head>
+<body>
+<main>
+<header id="hd"></header>
+<div id="app"></div>
+</main>
+<script>
+const S={ph:'setup',items:[],i:0,n:6,fx:'blur',msgs:[]};
+try{const m=JSON.parse(localStorage.getItem('bdm')||'[]');if(Array.isArray(m))S.msgs=m.filter(x=>x&&typeof x.t==='string').slice(0,60)}catch(e){}
+function saveM(){try{localStorage.setItem('bdm',JSON.stringify(S.msgs))}catch(e){}}
+function h(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+const app=document.getElementById('app'),hd=document.getElementById('hd');
+function go(p){S.ph=p;render()}
+function render(){
+  hd.replaceChildren();
+  const t=h('h1',null,'🔍 Quem é essa pessoa?');t.append(h('small',null,'Bao Dimaize'));hd.append(t);
+  if(S.ph==='play'){const b=h('button','btn ghost','← Fotos');b.onclick=()=>go('setup');hd.append(b)}
+  app.replaceChildren(S.ph==='setup'?setup():S.ph==='msgs'?msgsView():play());
+  window.scrollTo(0,0);
+}
+function setup(){
+  const c=h('section','card');
+  c.append(h('h2',null,'Monte as fotos'));
+  c.append(h('p','mut','As fotos ficam só no seu celular, não são enviadas para lugar nenhum. Coloque a foto do casal por último!'));
+  const inp=h('input');inp.type='file';inp.accept='image/*';inp.multiple=true;inp.id='f';
+  inp.onchange=()=>{for(const f of inp.files){S.items.push({url:URL.createObjectURL(f),cap:'',rev:new Set()})}render()};
+  const lab=h('label','btn alt','📷 Adicionar fotos');lab.htmlFor='f';lab.style.display='inline-block';
+  c.append(inp,lab);
+  S.items.forEach((it,k)=>{
+    const r=h('div','item');
+    const im=h('img');im.src=it.url;im.alt='';
+    const cap=h('input');cap.type='text';cap.value=it.cap;cap.maxLength=90;cap.placeholder='Frase fofa para a revelação';
+    cap.oninput=()=>{it.cap=cap.value};
+    const mv=(d)=>{const j=k+d;if(j<0||j>=S.items.length)return;[S.items[k],S.items[j]]=[S.items[j],S.items[k]];render()};
+    const up=h('button','mini','↑');up.onclick=()=>mv(-1);
+    const dn=h('button','mini','↓');dn.onclick=()=>mv(1);
+    const rm=h('button','mini','✕');rm.onclick=()=>{S.items.splice(k,1);render()};
+    r.append(im,cap,up,dn,rm);c.append(r);
+    const cb=h('button','btn alt',it.cl&&it.cl.trim()?'💡 Dicas adicionadas ✓ (editar)':'💡 Adicionar dicas e características');cb.style.cssText='width:100%;margin-top:8px;padding:8px;font-size:.9rem';
+    cb.onclick=()=>{it.showCl=!it.showCl;render()};c.append(cb);
+    if(it.showCl){const ta=h('textarea');ta.rows=4;ta.value=it.cl||'';ta.placeholder='Uma dica por linha. Ex.:\nAma café\nSempre chega atrasado\nTem uma risada inconfundível';ta.style.cssText='width:100%;margin-top:8px;font:inherit;color:inherit;background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px';ta.oninput=()=>{it.cl=ta.value};c.append(ta)}
+    const fb=h('button','btn alt',it.focus?'🎯 Sorriso marcado ✓ (ajustar)':'🎯 Mostrar o sorriso primeiro');fb.style.cssText='width:100%;margin-top:8px;padding:8px;font-size:.9rem';
+    fb.onclick=()=>{it.pick=!it.pick;render()};c.append(fb);
+    if(it.pick){
+      const pk=h('div','pk'),pi=h('img');pi.src=it.url;pi.alt='';const dot=h('div','dot');
+      const place=()=>{if(it.focus){dot.style.left=(it.focus.x*100)+'%';dot.style.top=(it.focus.y*100)+'%';dot.hidden=false}else dot.hidden=true};
+      pk.onclick=e=>{const b=pk.getBoundingClientRect();it.focus={x:Math.min(1,Math.max(0,(e.clientX-b.left)/b.width)),y:Math.min(1,Math.max(0,(e.clientY-b.top)/b.height))};place();fb.textContent='🎯 Sorriso marcado ✓ (ajustar)'};
+      pk.append(pi,dot);place();
+      c.append(h('p','mut center','Toque no sorriso (ou na parte que quer mostrar primeiro):'),pk);
+      const cl=h('button','btn ghost','Limpar marca');cl.style.cssText='display:block;margin:0 auto 8px';cl.onclick=()=>{it.focus=null;it.pick=false;render()};c.append(cl);
+    }
+  });
+  const TA='width:100%;margin-top:8px;font:inherit;color:inherit;background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px';
+  c.append(h('p','lbl','💌 Recadinhos dos amigos (aparecem no final)'));
+  const nm=h('input');nm.type='text';nm.placeholder='Nome de quem escreveu';nm.maxLength=30;
+  const mt=h('textarea');mt.rows=2;mt.maxLength=200;mt.placeholder='Recadinho fofo…';mt.style.cssText=TA;
+  const ad=h('button','btn alt','Adicionar recadinho');ad.style.cssText='width:100%;margin-top:8px';
+  ad.onclick=()=>{const t=mt.value.trim();if(!t||S.msgs.length>=60)return;S.msgs.push({n:nm.value.trim(),t});saveM();render()};
+  c.append(nm,mt,ad);
+  const bk=h('button','btn ghost','Colar vários de uma vez');bk.style.cssText='display:block;margin:8px auto 0';
+  bk.onclick=()=>{S.bulk=!S.bulk;render()};c.append(bk);
+  if(S.bulk){
+    const bt=h('textarea');bt.rows=5;bt.placeholder='Um por linha, assim:\nAna: Obrigada por tudo!\nBia: Vocês são demais!';bt.style.cssText=TA;
+    const bb=h('button','btn alt','Adicionar todos');bb.style.cssText='width:100%;margin-top:8px';
+    bb.onclick=()=>{bt.value.split('\n').forEach(l=>{l=l.trim();if(!l||S.msgs.length>=60)return;const i=l.indexOf(':');if(i>0&&i<=30)S.msgs.push({n:l.slice(0,i).trim(),t:l.slice(i+1).trim()});else S.msgs.push({n:'',t:l})});S.msgs=S.msgs.filter(m=>m.t);saveM();S.bulk=false;render()};
+    c.append(bt,bb);
+  }
+  S.msgs.forEach((m,k)=>{const r=h('div','item');const tx=h('div',null,(m.n?m.n+': ':'')+m.t);tx.style.cssText='flex:1;text-align:left;font-size:.92rem';const rm=h('button','mini','✕');rm.onclick=()=>{S.msgs.splice(k,1);saveM();render()};r.append(tx,rm);c.append(r)});
+  c.append(h('p','lbl','Dificuldade'));
+  const ch=h('div','chips');
+  [[4,'Fácil (16)'],[6,'Médio (36)'],[8,'Difícil (64)']].forEach(([n,t])=>{const b=h('button','chip'+(S.n===n?' on':''),t);b.onclick=()=>{S.n=n;S.items.forEach(x=>x.rev=new Set());render()};ch.append(b)});
+  c.append(ch);
+  c.append(h('p','lbl','Efeito na foto (vai sumindo conforme revela)'));
+  const fc=h('div','chips');
+  [['none','Nenhum'],['blur','Desfoque'],['dark','Escuro']].forEach(([k,t])=>{const b=h('button','chip'+(S.fx===k?' on':''),t);b.onclick=()=>{S.fx=k;render()};fc.append(b)});
+  c.append(fc);
+  const go1=h('button','btn big','Começar o jogo 🎉');go1.disabled=!S.items.length;
+  go1.onclick=()=>{S.i=0;S.items.forEach(x=>x.rev=new Set());go('play')};
+  c.append(go1);return c;
+}
+let mtTimer=null;
+function msgsView(){
+  clearInterval(mtTimer);
+  const M=S.msgs,c=h('section','card center'),body=h('div'),bar=h('p','mut'),nxt=h('button','btn big','Próximo ➜');
+  let i=0;
+  function reset(){clearInterval(mtTimer);mtTimer=setInterval(()=>{if(S.ph!=='msgs'){clearInterval(mtTimer);return}i++;show()},7000)}
+  function show(){
+    body.replaceChildren();
+    if(i>=M.length){
+      clearInterval(mtTimer);bar.textContent='';nxt.hidden=true;
+      body.append(h('div','big-heart','💛'),h('h2','cap','Com todo o carinho do Bao Dimaize 🥟'));
+      const r=h('button','btn big','🎉 Recomeçar');r.onclick=()=>{S.items.forEach(x=>x.rev=new Set());S.i=0;go('setup')};
+      body.append(r);confetti();return;
+    }
+    const m=M[i];
+    bar.textContent='Recadinho '+(i+1)+' de '+M.length;
+    body.append(h('blockquote','msg',m.t));
+    if(m.n)body.append(h('p','from','— '+m.n));
+    nxt.textContent=i===M.length-1?'Finalizar 💛':'Próximo ➜';
+  }
+  nxt.onclick=()=>{i++;show();reset()};
+  show();reset();
+  c.append(h('span','tag','💌 Recadinhos dos amigos'),bar,body,nxt);
+  return c;
+}
+function confetti(){
+  const em=['🎉','🎊','✨','🥟','❤️','🎁'];
+  for(let k=0;k<45;k++){const s=h('span','conf',em[k%em.length]);s.style.left=Math.random()*100+'%';s.style.animationDuration=(3+Math.random()*3)+'s';s.style.animationDelay=(Math.random()*1.8)+'s';document.body.append(s);setTimeout(()=>s.remove(),8000)}
+}
+function play(){
+  const it=S.items[S.i],N=S.n,total=N*N,tiles=[];
+  const c=h('section','card center');
+  c.append(h('span','tag','Foto '+(S.i+1)+' de '+S.items.length));
+  const grid=h('div','grid');grid.style.gridTemplate='repeat('+N+',1fr)/repeat('+N+',1fr)';
+  const im=new Image();let vis;const F=it.focus?'none':S.fx;
+  if(F==='pix'){vis=h('canvas')}else{vis=im;im.alt=''}
+  function fx(){
+    const p=it.rev.size/total,f=F;
+    if(f==='blur'){vis.style.filter=p>=1?'none':'blur('+(24*(1-p))+'px)';vis.style.transform=p>=1?'none':'scale(1.08)'}
+    else if(f==='dark'){vis.style.filter=p>=1?'none':'brightness('+(0.08+0.92*p)+')'}
+    else if(f==='pix'&&im.naturalWidth){
+      const W=Math.min(im.naturalWidth,900),H=Math.round(W*im.naturalHeight/im.naturalWidth);
+      vis.width=W;vis.height=H;const x=vis.getContext('2d');
+      if(p>=1){x.drawImage(im,0,0,W,H);return}
+      const c=Math.round(6+54*p),t=document.createElement('canvas');t.width=c;t.height=Math.max(1,Math.round(c*H/W));
+      t.getContext('2d').drawImage(im,0,0,t.width,t.height);
+      x.imageSmoothingEnabled=false;x.drawImage(t,0,0,W,H);
+    }
+  }
+  im.onload=fx;im.src=it.url;
+  const pic=h('div','pic');pic.append(vis,grid);
+  const st=h('p','mut');
+  const ctr=h('div','row');
+  const done=h('div');
+  let live=false;
+  function finish(){
+    ctr.hidden=true;
+    if(it.cap)done.append(h('h2','cap',it.cap));
+    const last=S.i===S.items.length-1;
+    const b=h('button','btn big',last?(S.msgs.length?'💌 Ver os recadinhos':'🎉 Fim! Recomeçar'):'Próxima foto →');
+    b.onclick=()=>{if(last&&S.msgs.length){go('msgs');return}if(last){S.items.forEach(x=>x.rev=new Set());S.i=0}else S.i++;go('play')};
+    done.append(b);
+    if(live)confetti();
+  }
+  function upd(){fx();st.textContent=it.rev.size+' de '+total+' pedaços revelados';if(it.rev.size===total&&!done.hasChildNodes())finish()}
+  function rev(k){if(it.rev.has(k))return;it.rev.add(k);tiles[k].classList.add('off');upd()}
+  function rand(n){const hid=[];for(let k=0;k<total;k++)if(!it.rev.has(k))hid.push(k);if(it.focus){const d=k=>{const cx=((k%N)+.5)/N-it.focus.x,cy=(Math.floor(k/N)+.5)/N-it.focus.y;return cx*cx+cy*cy};hid.sort((a,b)=>d(a)-d(b));for(let j=0;j<n&&hid.length;j++)rev(hid.shift());return}
+    for(let j=0;j<n&&hid.length;j++)rev(hid.splice(Math.floor(Math.random()*hid.length),1)[0])}
+  function all(){for(let k=0;k<total;k++)if(!it.rev.has(k)){tiles[k].style.transitionDelay=(Math.random()*.7)+'s';rev(k)}}
+  for(let k=0;k<total;k++){const t=h('button','tile');t.setAttribute('aria-label','Revelar pedaço');if(it.rev.has(k))t.classList.add('off');t.onclick=()=>rev(k);tiles.push(t);grid.append(t)}
+  const clues=(it.cl||'').split('\n').map(s=>s.trim()).filter(Boolean);
+  it.ci=Math.min(it.ci||0,clues.length);
+  const cbox=h('div','clues');
+  function drawClues(last){cbox.replaceChildren();for(let k=0;k<it.ci;k++){cbox.append(h('div','clue'+(last&&k===it.ci-1?' new':''),'💡 '+clues[k]))}}
+  function clue(){if(it.ci<clues.length){it.ci++;drawClues(true)}}
+  drawClues(false);
+  const combo=()=>{rand(Math.max(2,Math.round(total*0.08)));clue()};
+  [[clues.length?'✨ Pedaço + dica':'✨ Mais pedaços',combo,'btn big1'],['🎲 +1',()=>rand(1),'btn alt'],['🎲 +5',()=>rand(5),'btn alt']].concat(clues.length?[['💡 Só a dica',clue,'btn alt']]:[]).concat([['Revelar tudo 🎉',all,'btn alt']]).forEach(([t,f,cl])=>{const b=h('button',cl,t);b.onclick=f;ctr.append(b)});
+  c.append(pic,cbox,st,h('p','mut','Toque num pedaço para revelar, ou use os botões.'),ctr,done);
+  upd();if(it.focus&&!it.rev.size)rand(Math.max(2,Math.round(total*0.05)));live=true;
+  return c;
+}
+render();
+</script>
+</body>
+</html>
